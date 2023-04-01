@@ -23,6 +23,12 @@ namespace SystemLotniczy
         public MainWindow()
         {
             InitializeComponent();
+            Firma firma1 = new Firma("Mareczek");
+            firma1.DodajPracownika("Paweł","Jabłoński",18);
+            firma1.DodajPracownika("Kamil", "Nagórski", 16);
+
+
+            listaP.ItemsSource = firma1.pracownicy;
         }
     }
 }

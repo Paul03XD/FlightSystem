@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:SystemLotniczy"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <ListView x:Name="listaP">
+            
+        </ListView>
+    </StackPanel>
 </Window>
