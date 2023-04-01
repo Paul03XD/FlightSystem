@@ -10,5 +10,6 @@
         <ListView x:Name="listaP">
             
         </ListView>
+        <Button Width="100" Height="30" HorizontalAlignment="Right" Margin="10" Click="OpenWindowLoty">Loty</Button>
     </StackPanel>
 </Window>

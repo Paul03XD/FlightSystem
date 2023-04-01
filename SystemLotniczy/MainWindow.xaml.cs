@@ -20,15 +20,25 @@ namespace SystemLotniczy
     /// </summary>
     public partial class MainWindow : Window
     {
+        Loty loty1 = new Loty();
         public MainWindow()
         {
             InitializeComponent();
             Firma firma1 = new Firma("Mareczek");
             firma1.DodajPracownika("Paweł","Jabłoński",18);
             firma1.DodajPracownika("Kamil", "Nagórski", 16);
+            firma1.DodajPracownika("Daniel", "Filipowicz", 17);
+            firma1.DodajPracownika("Krystian", "Jaworowski", 18);
 
+
+            
 
             listaP.ItemsSource = firma1.pracownicy;
+        }
+
+        private void OpenWindowLoty(object sender, RoutedEventArgs e)
+        {
+            loty1.Show();
         }
     }
 }
