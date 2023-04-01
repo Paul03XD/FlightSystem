@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SystemLotniczy
 {
-    public class Klient
+    class Klient
     {
         string imie;
         string nazwisko;

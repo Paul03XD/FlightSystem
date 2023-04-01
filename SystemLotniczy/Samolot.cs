@@ -10,5 +10,11 @@ namespace SystemLotniczy
     {
         string nazwa;
         int l_miejsc;
+
+        public Samolot(string nazwa_, int l_miejsc_)
+        {
+            nazwa = nazwa_;
+            l_miejsc = l_miejsc_;
+        }
     }
 }
