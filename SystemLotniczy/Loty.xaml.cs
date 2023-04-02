@@ -20,15 +20,14 @@ namespace SystemLotniczy
     /// </summary>
     public partial class Loty : Window
     {
-        List<Klient> klienci = new List<Klient>();
+        List<Lot> loty = new List<Lot>();
         public Loty()
         {
             InitializeComponent();
-            gridLoty.ItemsSource = klienci;
-            klienci.Add(new Klient("Paweł", "Jabłoński", 18));
-            klienci.Add(new Klient("Kamil", "Nagórski", 16));
-            klienci.Add(new Klient("Daniel", "Filipowicz", 17));
-            klienci.Add(new Klient("Krystian", "Jaworowski", 18));
+            gridLoty.ItemsSource = loty;
+            loty.Add(new Lot("Paweł Jabłoński", "LOT 1", "London", new DateTime(2023,05,02), 233.33));
+            loty.Add(new Lot("Kamil Nagórski", "RYANAIR", "New York", new DateTime(2023, 07, 22), 173.33));
+            loty.Add(new Lot("Marek Kopczewski", "McDonnell", "Warszawa", new DateTime(2025, 03, 12), 473.33));
         }
     }
 }

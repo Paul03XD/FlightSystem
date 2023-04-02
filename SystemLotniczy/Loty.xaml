@@ -8,10 +8,11 @@
         Title="Loty" Height="450" Width="800">
     <DataGrid x:Name="gridLoty" AutoGenerateColumns="False">
         <DataGrid.Columns>
-            <DataGridTextColumn Header="Imię" Binding="{Binding imie}"/>
-            <DataGridTextColumn Header="Nazwisko" Binding="{Binding nazwisko}"/>
-            <DataGridTextColumn Header="Nazwa samolotu" Binding="{Binding data}"/>
-            <DataGridTextColumn Header="Cena" Binding="{Binding miejsce}"/>
+            <DataGridTextColumn Header="Klient" Binding="{Binding klient}"/>
+            <DataGridTextColumn Header="Samolot" Binding="{Binding nazwa_samolotu}"/>
+            <DataGridTextColumn Header="Data odlotu" Binding="{Binding data_odlotu}"/>
+            <DataGridTextColumn Header="Dokąd" Binding="{Binding miejsce_docelowe}"/>
+            <DataGridTextColumn Header="Cena" Binding="{Binding cena}"/>
         </DataGrid.Columns>
     </DataGrid>
 </Window>
