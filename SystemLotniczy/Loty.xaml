@@ -10,8 +10,8 @@
         <DataGrid.Columns>
             <DataGridTextColumn Header="Klient" Binding="{Binding klient}"/>
             <DataGridTextColumn Header="Samolot" Binding="{Binding nazwa_samolotu}"/>
-            <DataGridTextColumn Header="Data odlotu" Binding="{Binding data_odlotu}"/>
             <DataGridTextColumn Header="Dokąd" Binding="{Binding miejsce_docelowe}"/>
+            <DataGridTextColumn Header="Data odlotu" Binding="{Binding data_odlotu, StringFormat=d}"/>
             <DataGridTextColumn Header="Cena" Binding="{Binding cena}"/>
         </DataGrid.Columns>
     </DataGrid>
