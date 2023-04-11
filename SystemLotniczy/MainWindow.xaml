@@ -6,10 +6,34 @@
         xmlns:local="clr-namespace:SystemLotniczy"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <ListView x:Name="listaP">
-            
-        </ListView>
-        <Button Width="100" Height="30" HorizontalAlignment="Right" Margin="10" Click="OpenWindowLoty">Loty</Button>
-    </StackPanel>
+    <TabControl>
+        <TabItem Header="Klienci">
+            <DataGrid x:Name="gridKlienci" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Imię" Binding="{Binding imie}"/>
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding nazwisko}"/>
+                    <DataGridTextColumn Header="Wiek" Binding="{Binding wiek}"/>
+                    <DataGridTextColumn Header="Adres" Binding="{Binding adres}"/>
+                    <DataGridTextColumn Header="Telefon" Binding="{Binding nr_tel}"/>
+                    <DataGridTextColumn Header="E-mail" Binding="{Binding email}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+        <TabItem Header="Samoloty">
+            <DataGrid x:Name="gridSamoloty" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nazwa" Binding="{Binding nazwa}"/>
+                    <DataGridTextColumn Header="Pojemność" Binding="{Binding l_miejsc}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+        <TabItem Header="Loty">
+            <DataGrid x:Name="gridLoty" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Dokąd" Binding="{Binding miejsce_docelowe}"/>
+                    <DataGridTextColumn Header="Data odlotu" Binding="{Binding data_odlotu, StringFormat=d}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+    </TabControl>
 </Window>

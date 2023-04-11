@@ -11,11 +11,11 @@ namespace SystemLotniczy
 {
     public class ApplicationDbContextFactory:IDesignTimeDbContextFactory<ApplicationDbContext>
     {
-        //Metoda CreateDatabaseContext-implementacja interfesju, trzeba w niej dodać string[] args= null
         public ApplicationDbContext CreateDbContext(string[] args= null)
         { 
             var options = new DbContextOptionsBuilder<ApplicationDbContext>();
-            options.UseSqlServer("Server=localhost;Database=FlightSystemDatabase;" +
+            options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;" + // Nazwa serwera (zmień jak jesteś na swoim kompie) *@ by wprowadzić nazwę z backslashem
+                "Database=FlightSystemDatabase;" + // Nazwa bazy danych
                 "Trusted_Connection=True;  " +
                 "TrustServerCertificate=True;"); 
             // TrustServerCertificate=> akceptujemy to połączenie

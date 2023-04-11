@@ -14,11 +14,16 @@ namespace SystemLotniczy
         {
         }
         //Model tabeli (odpowiada danejtabeli w bazie)
-        public DbSet<Lot> Loty { get; set; }     
+        public DbSet<Klient> Klienci { get; set; }
+        public DbSet<Samolot> Samoloty { get; set; }
+        public DbSet<Lot> Loty { get; set; }
+
         //Tutajkonfiguracja tabeli, w metodzie tej można teżnp.określać relacje między tabelami
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Lot>().HasKey(x => x.id_lotu);
+            modelBuilder.Entity<Klient>().HasKey(x => x.id);
+            modelBuilder.Entity<Samolot>().HasKey(x => x.id);
+            modelBuilder.Entity<Lot>().HasKey(x => x.id);
         }
     }
 }

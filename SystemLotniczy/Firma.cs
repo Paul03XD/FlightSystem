@@ -18,7 +18,8 @@ namespace SystemLotniczy
 
         public void DodajPracownika(string imie, string nazwisko, int wiek)
         {
-            pracownicy.Add(new Klient(imie, nazwisko, wiek));
+            //dokończyć
+
         }
 
     }
