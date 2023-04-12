@@ -6,12 +6,6 @@
         xmlns:local="clr-namespace:SystemLotniczy"
         mc:Ignorable="d"
         Title="Loty" Height="450" Width="800">
-    <DataGrid x:Name="gridLoty" AutoGenerateColumns="False">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Imię" Binding="{Binding imie}"/>
-            <DataGridTextColumn Header="Nazwisko" Binding="{Binding nazwisko}"/>
-            <DataGridTextColumn Header="Nazwa samolotu" Binding="{Binding data}"/>
-            <DataGridTextColumn Header="Cena" Binding="{Binding miejsce}"/>
-        </DataGrid.Columns>
-    </DataGrid>
+    <Grid>
+    </Grid>
 </Window>
