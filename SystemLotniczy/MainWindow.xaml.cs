@@ -20,55 +20,84 @@ namespace SystemLotniczy
     /// </summary>
     public partial class MainWindow : Window
     {
-        //List<Klient> klienciList;
-        //List<Samolot> samolotyList;
-        //List<Lot> lotyList;
+        List<Klient> klienciList;
+        List<Samolot> samolotyList;
+        List<Lot> lotyList;
+        List<Rezerwacja> rezerwacjeList;
         public MainWindow()
         {
             InitializeComponent();
-            OpenDB();
+            OpenAndViewDB();
+
         }
 
-        public void OpenDB()
+
+        private void DodajLot(object sender, RoutedEventArgs e)
         {
             using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
             {
-                List<Klient> klienciTb = _dbContext.Klienci.ToList();
-                if (klienciTb is not null)
+                klienciList.Add(new Klient(new_imie.Text, new_nazwisko.Text, 43, new_adres.Text, 33, new_email.Text));
+                _dbContext.Klienci.UpdateRange(klienciList);
+                _dbContext.SaveChanges();
+            }
+        }
+        public void OpenAndViewDB()
+        {
+            using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
+            {
+                klienciList = _dbContext.Klienci.ToList();
+                if (klienciList is not null)
                 {
-                    foreach (var klienciRow in klienciTb)
-                    {
-                        //klienciList.Add(new Klient(klienciRow.imie,klienciRow.nazwisko,klienciRow.wiek,klienciRow.adres,klienciRow.nr_tel,klienciRow.email));
-                    }
                     Console.WriteLine("Tabela klienci git");
                 }
                 else
                 {
                     MessageBox.Show("Pusta tabela");
                 }
-                gridKlienci.ItemsSource = klienciTb;
+                gridKlienci.ItemsSource = klienciList;
 
 
-                List<Samolot> samolotyTb = _dbContext.Samoloty.ToList();
-                if (samolotyTb is not null)
+                samolotyList = _dbContext.Samoloty.ToList();
+                if (samolotyList is not null)
                 {
-                    foreach (var SamolotyRow in samolotyTb)
-                    {
-                    }
                     Console.WriteLine("Tabela samoloty git");
                 }
                 else
                 {
                     MessageBox.Show("Pusta tabela");
                 }
-                gridSamoloty.ItemsSource = samolotyTb;
+                gridSamoloty.ItemsSource = samolotyList;
 
 
-                List<Lot> lotyTb = _dbContext.Loty.ToList();
-                if (lotyTb is not null)
+                lotyList = _dbContext.Loty.ToList();
+                if (lotyList is not null)
                 {
-                    foreach (var lotyRow in lotyTb)
+                    Console.WriteLine("Tabela loty git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridLoty.ItemsSource = lotyList;
+
+
+                rezerwacjeList = _dbContext.Rezerwacje.ToList();
+                if (rezerwacjeList is not null)
+                {
+                    Console.WriteLine("Tabela loty git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridRezerwacje.ItemsSource = rezerwacjeList;
+
+                List<Trasa> trasyList = _dbContext.Trasy.ToList();
+                if (trasyList is not null)
+                {
+                    foreach(var trasyRow in trasyList)
                     {
+                        trasyCmbBox.Items.Add(trasyRow.nazwa);
                     }
                     Console.WriteLine("Tabela loty git");
                 }
@@ -76,7 +105,7 @@ namespace SystemLotniczy
                 {
                     MessageBox.Show("Pusta tabela");
                 }
-                gridLoty.ItemsSource = lotyTb;
+
             }
         }
     }
