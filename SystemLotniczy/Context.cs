@@ -19,6 +19,7 @@ namespace SystemLotniczy
         public DbSet<Lot> Loty { get; set; }
         public DbSet<Rezerwacja> Rezerwacje { get; set; }
         public DbSet<Trasa> Trasy { get; set; }
+        public DbSet<Firma> Firmy { get; set; }
 
         //Tutajkonfiguracja tabeli, w metodzie tej można teżnp.określać relacje między tabelami
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,6 +29,7 @@ namespace SystemLotniczy
             modelBuilder.Entity<Lot>().HasKey(x => x.id);
             modelBuilder.Entity<Rezerwacja>().HasKey(x => x.id);
             modelBuilder.Entity<Trasa>().HasKey(x => x.id);
+            modelBuilder.Entity<Firma>().HasKey(x => x.id);
         }
     }
 }

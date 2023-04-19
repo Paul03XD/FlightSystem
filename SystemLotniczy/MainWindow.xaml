@@ -7,7 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <TabControl>
-        <TabItem Header="Edit" IsSelected="True">
+        <TabItem Header="Login" IsSelected="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" VerticalAlignment="Center">Login:</Label>
+                <TextBox Grid.Row="1" Margin="3" x:Name="loginTxtbox"></TextBox>
+                <Label Grid.Row="2" VerticalAlignment="Center">Password:</Label>
+                <TextBox Grid.Row="3" Margin="3" x:Name="passTxtbox"></TextBox>
+                <Button Grid.Row="4" Margin="3" Click="Zaloguj">Login</Button>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Edit">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
@@ -69,6 +89,15 @@
                     <DataGridTextColumn Header="Adres" Binding="{Binding adres}"/>
                     <DataGridTextColumn Header="Telefon" Binding="{Binding nr_tel}"/>
                     <DataGridTextColumn Header="E-mail" Binding="{Binding email}"/>
+                    <DataGridTextColumn Header="Firma" Binding="{Binding id_firmy}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+        <TabItem Header="Firmy">
+            <DataGrid x:Name="gridFirmy" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nazwa" Binding="{Binding nazwa}"/>
+                    <DataGridTextColumn Header="Placowka" Binding="{Binding placowka}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </TabItem>

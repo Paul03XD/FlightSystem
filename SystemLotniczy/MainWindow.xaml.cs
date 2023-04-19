@@ -21,6 +21,7 @@ namespace SystemLotniczy
     public partial class MainWindow : Window
     {
         List<Klient> klienciList;
+        List<Firma> firmaList;
         List<Samolot> samolotyList;
         List<Lot> lotyList;
         List<Rezerwacja> rezerwacjeList;
@@ -31,20 +32,56 @@ namespace SystemLotniczy
 
         }
 
+        private void Zaloguj(object sender, RoutedEventArgs e)
+        {
+            string login;
+            string password;
+            if (loginTxtbox.Text != "")
+            {
+                login = loginTxtbox.Text;
+                if (passTxtbox.Text != "")
+                {
+                    password = passTxtbox.Text;
+                    for(int i = 0; i < klienciList.Count; i++)
+                    {
+                        if (klienciList[i].username == login && klienciList[i].password == password)
+                        {
+                            MessageBox.Show("Zalogowano");
+                            return;
+                        }
+                    }
+                    MessageBox.Show("Niepoprawny login lub hasło");
+                }
+                else
+                {
+                    MessageBox.Show("Wprowadź hasło");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wprowadź login");
+            }
+        }
 
         private void DodajLot(object sender, RoutedEventArgs e)
         {
-            using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
-            {
-                klienciList.Add(new Klient(new_imie.Text, new_nazwisko.Text, 43, new_adres.Text, 33, new_email.Text));
-                _dbContext.Klienci.UpdateRange(klienciList);
-                _dbContext.SaveChanges();
-            }
+            
         }
         public void OpenAndViewDB()
         {
             using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
             {
+                firmaList = _dbContext.Firmy.ToList();
+                if (firmaList is not null)
+                {
+                    Console.WriteLine("Tabela firmy git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridFirmy.ItemsSource = firmaList;
+
                 klienciList = _dbContext.Klienci.ToList();
                 if (klienciList is not null)
                 {
@@ -107,6 +144,11 @@ namespace SystemLotniczy
                 }
 
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

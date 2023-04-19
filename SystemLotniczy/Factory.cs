@@ -14,10 +14,7 @@ namespace SystemLotniczy
         public ApplicationDbContext CreateDbContext(string[] args= null)
         { 
             var options = new DbContextOptionsBuilder<ApplicationDbContext>();
-            options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;" + // Nazwa serwera (zmień jak jesteś na swoim kompie) *@ by wprowadzić nazwę z backslashem
-                "Database=FlightSystemDatabase;" + // Nazwa bazy danych
-                "Trusted_Connection=True;  " +
-                "TrustServerCertificate=True;"); 
+            options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=FlightSystemDatabase;Trusted_Connection=True;TrustServerCertificate=True;"); 
             // TrustServerCertificate=> akceptujemy to połączenie
             return new ApplicationDbContext(options.Options);
         }
