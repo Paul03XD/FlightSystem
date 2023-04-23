@@ -66,3 +66,7 @@ C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\bin\Debu
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\SystemLotniczy.csproj.CopyComplete
+C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\Logowanie.g.cs
+C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\Logowanie.baml
+C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\UserView.g.cs
+C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\UserView.baml

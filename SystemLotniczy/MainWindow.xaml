@@ -7,24 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <TabControl>
-        <TabItem Header="Login" IsSelected="True">
+        <TabItem Header="Loguj" IsSelected="True">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" VerticalAlignment="Center">Login:</Label>
-                <TextBox Grid.Row="1" Margin="3" x:Name="loginTxtbox"></TextBox>
-                <Label Grid.Row="2" VerticalAlignment="Center">Password:</Label>
-                <TextBox Grid.Row="3" Margin="3" x:Name="passTxtbox"></TextBox>
-                <Button Grid.Row="4" Margin="3" Click="Zaloguj">Login</Button>
+                <Button Height="30" Width="100" Click="Zaloguj">Logowanie</Button>
             </Grid>
         </TabItem>
         <TabItem Header="Edit">
@@ -77,7 +62,7 @@
                     <Label Width="75">Kiedy:</Label>
                     <DatePicker x:Name="new_data_wylotu" Margin="3"></DatePicker>
                 </DockPanel>
-                <Button Click="DodajLot" Content="Zarezerwuj" Width="100" Height="30" Grid.Row="5" Grid.Column="1"/>
+                <Button Content="Zarezerwuj" Width="100" Height="30" Grid.Row="5" Grid.Column="1"/>
             </Grid>
         </TabItem>
         <TabItem Header="Klienci">

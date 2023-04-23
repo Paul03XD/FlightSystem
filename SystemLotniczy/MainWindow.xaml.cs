@@ -34,34 +34,15 @@ namespace SystemLotniczy
 
         private void Zaloguj(object sender, RoutedEventArgs e)
         {
-            string login;
-            string password;
-            if (loginTxtbox.Text != "")
-            {
-                login = loginTxtbox.Text;
-                if (passTxtbox.Text != "")
-                {
-                    password = passTxtbox.Text;
-                    for(int i = 0; i < klienciList.Count; i++)
-                    {
-                        if (klienciList[i].username == login && klienciList[i].password == password)
-                        {
-                            MessageBox.Show("Zalogowano");
-                            return;
-                        }
-                    }
-                    MessageBox.Show("Niepoprawny login lub hasło");
-                }
-                else
-                {
-                    MessageBox.Show("Wprowadź hasło");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Wprowadź login");
-            }
+            Logowanie loguj1 = new Logowanie(klienciList, firmaList);
+            loguj1.Show();
         }
+        private void Zarejestruj(object sender, RoutedEventArgs e)
+        {
+            string username, password, imie, nazwisko, wiek, adres, nr_tel, email, id_firmy;
+            
+        }
+
 
         private void DodajLot(object sender, RoutedEventArgs e)
         {
@@ -144,11 +125,6 @@ namespace SystemLotniczy
                 }
 
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
