@@ -14,13 +14,13 @@ namespace SystemLotniczy
         [Column("id_klienta")]
         public int id_klienta { get; set; }
         public int id_lotu { get; set; }
-        public int cena { get; set; }
+        public double cena { get; set; }
 
         public Rezerwacja()
         {
 
         }
-        public Rezerwacja(int id_klienta_, int id_lotu_, int cena_)
+        public Rezerwacja(int id_klienta_, int id_lotu_, double cena_)
         {
             id_klienta = id_klienta_;
             id_lotu = id_lotu_;

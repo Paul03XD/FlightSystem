@@ -93,7 +93,7 @@ namespace SystemLotniczy
 
 
 
-
+                /*
                 rezerwacjeList = _dbContext.Rezerwacje.ToList();
                 if (rezerwacjeList is not null)
                 {
@@ -104,7 +104,7 @@ namespace SystemLotniczy
                     MessageBox.Show("Pusta tabela");
                 }
                 gridRezerwacje.ItemsSource = rezerwacjeList;
-
+                */
                 List<Trasa> trasyList = _dbContext.Trasy.ToList();
                 if (trasyList is not null)
                 {
