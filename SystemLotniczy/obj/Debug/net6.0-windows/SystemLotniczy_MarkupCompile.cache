@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\App.xaml
-11407045341
+5-1542208919
 
-6582501689
-1941142463650
-MainWindow.xaml;
+161753481855
+2231977931832
+AdminView.xaml;Logowanie.xaml;Loty.xaml;MainWindow.xaml;UserView.xaml;
 
 False
 

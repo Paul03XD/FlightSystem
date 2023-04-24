@@ -1,0 +1,63 @@
+﻿<Window x:Class="SystemLotniczy.UserView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemLotniczy"
+        mc:Ignorable="d"
+        Title="UserView" Height="450" Width="800">
+    <DockPanel>
+        <Label DockPanel.Dock="Top" HorizontalContentAlignment="Right" Margin="10" x:Name="zalogowanyJako">Zalogowany jako: </Label>
+        <TabControl>
+            <TabItem Header="Kup Bilet">
+                <DockPanel>
+                    <StackPanel Width="200" DockPanel.Dock="Left">
+                        <Label Margin="3">Dokąd chcesz lecieć?</Label>
+                        <TextBox Margin="3" x:Name="trasyTxtBox" TextChanged="lotyZmien"></TextBox>
+                        
+                    </StackPanel>
+                    <Grid DockPanel.Dock="Top" x:Name="ticketGrid" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0">Lot do: </Label>
+                        <Label Grid.Column="0" Grid.Row="1">Z lotniska: </Label>
+                        <Label Grid.Column="0" Grid.Row="2">Wylot: </Label>
+                        <Label Grid.Column="0" Grid.Row="3">Dystans:</Label>
+                        <Label Grid.Column="0" Grid.Row="4">Cena:</Label>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="trasaTxt"></Label>
+                        <Label Grid.Column="1" Grid.Row="1" x:Name="lotniskoTxt"></Label>
+                        <Label Grid.Column="1" Grid.Row="2" x:Name="dataWylotuTxt"></Label>
+                        <Label Grid.Column="1" Grid.Row="3" x:Name="dystatsTxt"></Label>
+                        <Label Grid.Column="1" Grid.Row="4" x:Name="cenaTxt"></Label>
+                    </Grid>
+                    <DataGrid x:Name="gridLoty"  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="MoveData"/>
+                                <EventSetter Event="Selected" Handler="TicketGridCollapse"/>
+                                <EventSetter Event="Unselected" Handler="TicketGridCollapse"/>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Samolot" Binding="{Binding nazwa_samolotu}"/>
+                            <DataGridTextColumn Header="Skąd" Binding="{Binding nazwa_lotniska}"/>
+                            <DataGridTextColumn Header="Dokąd" Binding="{Binding nazwa_trasy}"/>
+                            <DataGridTextColumn Header="Dystans" Binding="{Binding dystans}"/>
+                            <DataGridTextColumn Header="Data odlotu" Binding="{Binding data_odlotu, StringFormat=d}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="SystemLotniczy.Logowanie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemLotniczy"
+        mc:Ignorable="d"
+        Title="Logowanie" Height="450" Width="800">
+    <DockPanel>
+        <StackPanel Width="250">
+            <Label HorizontalAlignment="Center" Margin="0,20">Logowanie</Label>
+            <Label Height="24" Width="150" Margin="3">Nazwa użytkownika:</Label>
+            <TextBox Height="24" Width="150" Margin="3" VerticalContentAlignment="Center" x:Name="loginTxtBox"></TextBox>
+            <Label Height="24" Width="150" Margin="3">Hasło:</Label>
+            <TextBox Height="24" Width="150" Margin="3" VerticalContentAlignment="Center" x:Name="passTxtBox"></TextBox>
+            <Button Width="100" Height="30" Margin="0,30,0,0" Click="Zaloguj">Zaloguj</Button>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">Rejestracja</Label>
+            <Label Grid.Column="0" Grid.Row="1">Username:</Label>
+            <TextBox Grid.Column="0" Grid.Row="2" Margin="3" x:Name="usernameTxtBox"></TextBox>
+            <Label Grid.Column="0" Grid.Row="3">Password:</Label>
+            <TextBox Grid.Column="0" Grid.Row="4" Margin="3" x:Name="passwordTxtBox"></TextBox>
+            <Label Grid.Column="0" Grid.Row="5">Imię:</Label>
+            <TextBox Grid.Column="0" Grid.Row="6" Margin="3" x:Name="imieTxtBox"></TextBox>
+            <Label Grid.Column="0" Grid.Row="7">Nazwisko:</Label>
+            <TextBox Grid.Column="0" Grid.Row="8" Margin="3" x:Name="nazwiskoTxtBox"></TextBox>
+            <Label Grid.Column="0" Grid.Row="9">Wiek:</Label>
+            <TextBox Grid.Column="0" Grid.Row="10" Margin="3" x:Name="wiekTxtBox"></TextBox>
+
+
+            <Label Grid.Column="1" Grid.Row="1">Adres:</Label>
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="3" x:Name="adresTxtBox"></TextBox>
+            <Label Grid.Column="1" Grid.Row="3">Nr. telefonu:</Label>
+            <TextBox Grid.Column="1" Grid.Row="4" Margin="3" x:Name="nrtelTxtBox"></TextBox>
+            <Label Grid.Column="1" Grid.Row="5">E-mail:</Label>
+            <TextBox Grid.Column="1" Grid.Row="6" Margin="3" x:Name="emailTxtBox"></TextBox>
+            <Label Grid.Column="1" Grid.Row="7">Czy firma:</Label>
+            <CheckBox Grid.Column="1" Grid.Row="8" Margin="3" Checked="firmaActive" Unchecked="firmaActive"></CheckBox>
+            <Label Grid.Column="1" Grid.Row="9">Firma:</Label>
+            <ComboBox Grid.Column="1" Grid.Row="10" Margin="3" IsEnabled="False" x:Name="firmaCmbBox"></ComboBox>
+        </Grid>
+    </DockPanel>
+</Window>

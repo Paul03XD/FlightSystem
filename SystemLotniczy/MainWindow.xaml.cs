@@ -20,15 +20,106 @@ namespace SystemLotniczy
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Klient> klienciList;
+        List<Firma> firmaList;
+        List<Samolot> samolotyList;
+        List<Lot> lotyList;
+        List<Rezerwacja> rezerwacjeList;
         public MainWindow()
         {
             InitializeComponent();
-            Firma firma1 = new Firma("Mareczek");
-            firma1.DodajPracownika("Paweł","Jabłoński",18);
-            firma1.DodajPracownika("Kamil", "Nagórski", 16);
+            OpenAndViewDB();
+
+        }
+
+        private void Zaloguj(object sender, RoutedEventArgs e)
+        {
+            Logowanie loguj1 = new Logowanie(klienciList, firmaList);
+            loguj1.Show();
+        }
+        private void ZalogujAdmin(object sender, RoutedEventArgs e)
+        {
+            AdminView admin1 = new AdminView();
+            admin1.Show();
+        }
+        private void Zarejestruj(object sender, RoutedEventArgs e)
+        {
+            string username, password, imie, nazwisko, wiek, adres, nr_tel, email, id_firmy;
+            
+        }
 
 
-            listaP.ItemsSource = firma1.pracownicy;
+        private void DodajLot(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        public void OpenAndViewDB()
+        {
+            using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
+            {
+                firmaList = _dbContext.Firmy.ToList();
+                if (firmaList is not null)
+                {
+                    Console.WriteLine("Tabela firmy git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridFirmy.ItemsSource = firmaList;
+
+                klienciList = _dbContext.Klienci.ToList();
+                if (klienciList is not null)
+                {
+                    Console.WriteLine("Tabela klienci git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridKlienci.ItemsSource = klienciList;
+
+
+                samolotyList = _dbContext.Samoloty.ToList();
+                if (samolotyList is not null)
+                {
+                    Console.WriteLine("Tabela samoloty git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridSamoloty.ItemsSource = samolotyList;
+
+
+
+
+                rezerwacjeList = _dbContext.Rezerwacje.ToList();
+                if (rezerwacjeList is not null)
+                {
+                    Console.WriteLine("Tabela loty git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+                gridRezerwacje.ItemsSource = rezerwacjeList;
+
+                List<Trasa> trasyList = _dbContext.Trasy.ToList();
+                if (trasyList is not null)
+                {
+                    foreach(var trasyRow in trasyList)
+                    {
+                        trasyCmbBox.Items.Add(trasyRow.nazwa);
+                    }
+                    Console.WriteLine("Tabela loty git");
+                }
+                else
+                {
+                    MessageBox.Show("Pusta tabela");
+                }
+
+            }
         }
     }
 }
