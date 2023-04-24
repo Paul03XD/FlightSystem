@@ -137,8 +137,8 @@ namespace SystemLotniczy
         {
             if(gridLoty.SelectedItem is not null)
             {
-                trasyTxtBox.Text = gridLoty.SelectedItem.ToString().Split()[1];
-                data_odlotuDP.Text = gridLoty.SelectedItem.ToString().Split()[2];
+                trasyTxtBox.Text = gridLoty.SelectedItem.ToString().Split(' ')[1];
+                data_odlotuDP.Text = gridLoty.SelectedItem.ToString().Split(' ')[2];
             }
         }
     }
