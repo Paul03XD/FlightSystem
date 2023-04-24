@@ -8,9 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <TabControl>
         <TabItem Header="Loguj" IsSelected="True">
-            <Grid>
-                <Button Height="30" Width="100" Click="Zaloguj">Logowanie</Button>
-            </Grid>
+            <StackPanel>
+                <Button Margin="30" Height="30" Width="100" Click="Zaloguj">Logowanie</Button>
+                <Button Margin="30" Height="30" Width="100" Click="ZalogujAdmin">Admin</Button>
+            </StackPanel>
         </TabItem>
         <TabItem Header="Edit">
             <Grid>

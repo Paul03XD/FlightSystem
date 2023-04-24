@@ -70,3 +70,5 @@ C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debu
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\Logowanie.baml
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\UserView.g.cs
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\UserView.baml
+C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\AdminView.g.cs
+C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\obj\Debug\net6.0-windows\AdminView.baml

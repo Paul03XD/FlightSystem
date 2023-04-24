@@ -37,6 +37,11 @@ namespace SystemLotniczy
             Logowanie loguj1 = new Logowanie(klienciList, firmaList);
             loguj1.Show();
         }
+        private void ZalogujAdmin(object sender, RoutedEventArgs e)
+        {
+            AdminView admin1 = new AdminView();
+            admin1.Show();
+        }
         private void Zarejestruj(object sender, RoutedEventArgs e)
         {
             string username, password, imie, nazwisko, wiek, adres, nr_tel, email, id_firmy;
@@ -87,16 +92,6 @@ namespace SystemLotniczy
                 gridSamoloty.ItemsSource = samolotyList;
 
 
-                lotyList = _dbContext.Loty.ToList();
-                if (lotyList is not null)
-                {
-                    Console.WriteLine("Tabela loty git");
-                }
-                else
-                {
-                    MessageBox.Show("Pusta tabela");
-                }
-                gridLoty.ItemsSource = lotyList;
 
 
                 rezerwacjeList = _dbContext.Rezerwacje.ToList();
