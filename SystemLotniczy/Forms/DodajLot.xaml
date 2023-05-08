@@ -1,0 +1,82 @@
+﻿<Window x:Class="SystemLotniczy.DodajLot"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemLotniczy"
+        mc:Ignorable="d"
+        Title="Dodaj lot" Height="350" Width="300">
+    <Grid HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Height="30" Margin="10" VerticalContentAlignment="Center">Lotnisko:</Label>
+        <Label Grid.Column="0" Grid.Row="1" Height="30" Margin="10" VerticalContentAlignment="Center">Samolot:</Label>
+        <Label Grid.Column="0" Grid.Row="2" Height="30" Margin="10" VerticalContentAlignment="Center">Dokąd:</Label>
+        <Label Grid.Column="0" Grid.Row="3" Height="30" Margin="10" VerticalContentAlignment="Center">Dystans:</Label>
+        <Label Grid.Column="0" Grid.Row="4" Height="30" Margin="10" VerticalContentAlignment="Center">Data odlotu:</Label>
+
+        <ComboBox Grid.Column="1" Grid.Row="0" Height="30" Margin="10" VerticalContentAlignment="Center" x:Name="lotniskoCmbBox" Text="{Binding nazwa_lotniska, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding CurrentItem.ErrorContent}" Foreground="Red"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="1" Height="30" Margin="10" VerticalContentAlignment="Center"  x:Name="samolotCmbBox" Text="{Binding nazwa_samolotu, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding CurrentItem.ErrorContent}" Foreground="Red"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="2" Height="30" Margin="10" VerticalContentAlignment="Center"  x:Name="miastoCmbBox" Text="{Binding nazwa_trasy, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding CurrentItem.ErrorContent}" Foreground="Red"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </ComboBox>
+
+        <TextBox Grid.Column="1" Grid.Row="3" Width="150" Height="30" Margin="10" VerticalContentAlignment="Center" x:Name="dystansTxtBox" Text="{Binding dystans, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, StringFormat={}}">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding CurrentItem.ErrorContent}" Foreground="Red"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <DatePicker Grid.Column="1" Grid.Row="4" Width="150" Height="30" Margin="10" x:Name="data_odlotu_DatePicker" VerticalContentAlignment="Center" Text="{Binding data_odlotu, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding CurrentItem.ErrorContent}" Foreground="Red"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </DatePicker>
+
+        <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Width="150" Height="30" Margin="10" Click="Dodaj_Lot">Dodaj lot</Button>
+    </Grid>
+</Window>

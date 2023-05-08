@@ -15,16 +15,32 @@ using System.Windows.Shapes;
 
 namespace SystemLotniczy
 {
+    public static class Walidacja
+    {
+        public static bool IsValid(DependencyObject obj)
+        {
+            return !Validation.GetHasError(obj) &&
+            LogicalTreeHelper.GetChildren(obj)
+            .OfType<DependencyObject>()
+            .All(IsValid);
+        }
+    }
+    public static class Listy
+    {
+        public static double kursZaKm = 1.28;
+        public static List<Klient> klienciList = new List<Klient>();
+        public static List<Firma> firmaList = new List<Firma>();
+        public static List<Samolot> samolotyList = new List<Samolot>();
+        public static List<Lot> lotyList = new List<Lot>();
+        public static List<Rezerwacja> rezerwacjeList = new List<Rezerwacja>();
+        public static List<Lotnisko> lotniskaList = new List<Lotnisko>();
+        public static List<Trasy> trasyList = new List<Trasy>();
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Klient> klienciList;
-        List<Firma> firmaList;
-        List<Samolot> samolotyList;
-        List<Lot> lotyList;
-        List<Rezerwacja> rezerwacjeList;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,9 +48,22 @@ namespace SystemLotniczy
 
         }
 
-        private void Zaloguj(object sender, RoutedEventArgs e)
+        public void OpenAndViewDB()
         {
-            Logowanie loguj1 = new Logowanie(klienciList, firmaList);
+            using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
+            {
+                Listy.firmaList = _dbContext.Firmy.ToList();
+                Listy.klienciList = _dbContext.Klienci.ToList();
+                Listy.samolotyList = _dbContext.Samoloty.ToList();
+                Listy.lotniskaList = _dbContext.Lotniska.ToList();
+                Listy.lotyList = _dbContext.Loty.ToList();
+                Listy.rezerwacjeList = _dbContext.Rezerwacje.ToList();
+                Listy.trasyList = _dbContext.Trasy.ToList();
+            }
+        }
+            private void Zaloguj(object sender, RoutedEventArgs e)
+        {
+            Logowanie loguj1 = new Logowanie();
             loguj1.Show();
         }
         private void ZalogujAdmin(object sender, RoutedEventArgs e)
@@ -52,74 +81,7 @@ namespace SystemLotniczy
         private void DodajLot(object sender, RoutedEventArgs e)
         {
             
-        }
-        public void OpenAndViewDB()
-        {
-            using (var _dbContext = new ApplicationDbContextFactory().CreateDbContext())
-            {
-                firmaList = _dbContext.Firmy.ToList();
-                if (firmaList is not null)
-                {
-                    Console.WriteLine("Tabela firmy git");
-                }
-                else
-                {
-                    MessageBox.Show("Pusta tabela");
-                }
-                gridFirmy.ItemsSource = firmaList;
-
-                klienciList = _dbContext.Klienci.ToList();
-                if (klienciList is not null)
-                {
-                    Console.WriteLine("Tabela klienci git");
-                }
-                else
-                {
-                    MessageBox.Show("Pusta tabela");
-                }
-                gridKlienci.ItemsSource = klienciList;
-
-
-                samolotyList = _dbContext.Samoloty.ToList();
-                if (samolotyList is not null)
-                {
-                    Console.WriteLine("Tabela samoloty git");
-                }
-                else
-                {
-                    MessageBox.Show("Pusta tabela");
-                }
-                gridSamoloty.ItemsSource = samolotyList;
-
-
-
-                /*
-                rezerwacjeList = _dbContext.Rezerwacje.ToList();
-                if (rezerwacjeList is not null)
-                {
-                    Console.WriteLine("Tabela loty git");
-                }
-                else
-                {
-                    MessageBox.Show("Pusta tabela");
-                }
-                gridRezerwacje.ItemsSource = rezerwacjeList;
-                */
-                List<Trasa> trasyList = _dbContext.Trasy.ToList();
-                if (trasyList is not null)
-                {
-                    foreach(var trasyRow in trasyList)
-                    {
-                        trasyCmbBox.Items.Add(trasyRow.nazwa);
-                    }
-                    Console.WriteLine("Tabela loty git");
-                }
-                else
-                {
-                    MessageBox.Show("Pusta tabela");
-                }
-
-            }
+     
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\user\Documents\Projekty na lekcję\FlightSystem\SystemLotniczy\App.xaml
-5-1542208919
+10-930710215
 
-18-1894084430
+23-323850383
 2231977931832
-AdminView.xaml;Logowanie.xaml;Loty.xaml;MainWindow.xaml;UserView.xaml;
+Forms\DodajLot.xaml;Forms\DodajPracownika.xaml;Forms\KupBiletFirmy.xaml;Forms\Logowanie.xaml;Forms\Rejestracja.xaml;Forms\RejestracjaFirmy.xaml;MainWindow.xaml;Views\AdminView.xaml;Views\FirmaView.xaml;Views\UserView.xaml;
 
-False
+True
 

@@ -1,0 +1,35 @@
+﻿<Window x:Class="SystemLotniczy.Logowanie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemLotniczy"
+        mc:Ignorable="d"
+        Title="Logowanie" Height="400" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label HorizontalAlignment="Center" Margin="0,20">Logowanie</Label>
+            <Label Width="150" Margin="3">Nazwa użytkownika:</Label>
+            <TextBox Width="150" Margin="3" Padding="3" VerticalContentAlignment="Center" x:Name="loginTxtBox"></TextBox>
+            <Label Width="150" Margin="3">Hasło:</Label>
+            <PasswordBox Width="150" Margin="3" Padding="3" VerticalContentAlignment="Center" x:Name="passTxtBox"/>
+            <Button Width="100" Height="30" Margin="0,30,0,0" Click="Zaloguj">Zaloguj</Button>
+            <Label Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">Nie masz konta?</Label>
+            <Button Width="100" Height="30" Click="Zarejstruj">Załóż konto</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label HorizontalAlignment="Center" Margin="0,20">Zaloguj jako firma</Label>
+            <Label Width="150" Margin="3">Login firmy:</Label>
+            <TextBox Width="150" Margin="3" Padding="3" VerticalContentAlignment="Center" x:Name="loginFirmyTxtBox"></TextBox>
+            <Label Width="150" Margin="3">Hasło firmy:</Label>
+            <PasswordBox Width="150" Margin="3" Padding="3" VerticalContentAlignment="Center" x:Name="passFirmyTxtBox"/>
+            <Button Width="100" Height="30" Margin="0,30,0,0" Click="ZalogujFirma">Zaloguj</Button>
+            <Label Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">Chcesz zarejestrować firmę?</Label>
+            <Button Width="100" Height="30" Click="ZarejstrujFirme">Zarejestruj firmę</Button>
+        </StackPanel>
+    </Grid>
+</Window>

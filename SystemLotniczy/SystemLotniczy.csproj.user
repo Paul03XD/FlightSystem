@@ -7,27 +7,57 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Logowanie.xaml.cs">
+    <Compile Update="Forms\DodajLot.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Loty.xaml.cs">
+    <Compile Update="Forms\DodajPracownika.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserView.xaml.cs">
+    <Compile Update="Forms\RejestracjaFirmy.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FirmaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Logowanie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Rejestracja.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\KupBiletFirmy.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Logowanie.xaml">
+    <Page Update="Forms\DodajLot.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Loty.xaml">
+    <Page Update="Forms\DodajPracownika.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\RejestracjaFirmy.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FirmaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Logowanie.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserView.xaml">
+    <Page Update="Forms\Rejestracja.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\KupBiletFirmy.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
